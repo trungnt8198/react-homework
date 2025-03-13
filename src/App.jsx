@@ -36,7 +36,7 @@ function App() {
   const handleDelete = (index) => {
     const confirmDelete = confirm(`Do you really want to delete this todo: ${todos[index].value}`);
     if(confirmDelete) {
-      let newTodos = todos.filter(t => t !== todos[index].value);
+      let newTodos = todos.filter(t => t.value !== todos[index].value);
       localStorage.setItem("tasks", JSON.stringify(newTodos));
       setTodos(newTodos);
     }
