@@ -1,0 +1,55 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+  font-size: 16px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+ul {
+  list-style-type: none;
+  width: 400px;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  border: 1px solid orange;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  input {
+    flex: 1;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: transparent;
+  }
+  button {
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 10px;
+  }
+}
