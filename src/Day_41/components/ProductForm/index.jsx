@@ -8,9 +8,7 @@ const ProductForm = ({ submitTitle = "" }) => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
-  const [formValues, setFormValues] = useState(() =>
-    initFormValues(productProperties)
-  );
+  const [formValues, setFormValues] = useState(initFormValues);
   const [errors, setErrors] = useState({});
 
   const handleFieldValue = (e) => {
@@ -42,11 +40,14 @@ const ProductForm = ({ submitTitle = "" }) => {
       },
       body: JSON.stringify(processedData),
     })
-      .then((res) => res.json())
       .then((res) => {
-        if (res.message) {
-          alert(res.message);
-        } else if (res.errors) {
+        if (res.status === 500) {
+          throw new Error("Server Error !");
+        }
+        return res.json();
+      })
+      .then((res) => {
+        if (res.errors) {
           setErrors(res.errors);
         } else {
           alert("Tạo sản phẩm thành công !");
