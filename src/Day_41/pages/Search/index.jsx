@@ -46,6 +46,7 @@ const Search = () => {
           type="text"
           className="search-input"
           placeholder="Nhập tên sản phẩm..."
+          defaultValue={query}
           onChange={(e) => debounceSearch(e.target.value)}
         />
         {/* <button className="search-button">Tìm kiếm</button> */}
