@@ -50,6 +50,7 @@ const ProductForm = ({ submitTitle = "" }) => {
         if (res.errors) {
           setErrors(res.errors);
         } else {
+          setErrors({});
           alert("Tạo sản phẩm thành công !");
           setFormValues(initFormValues);
           if (confirm("Bạn có muốn chuyển sang trang danh sách sản phẩm ?")) {
@@ -58,7 +59,7 @@ const ProductForm = ({ submitTitle = "" }) => {
         }
       })
       .catch((err) => {
-        console(err);
+        console.log(err);
         alert(
           "An error occurred while creating the product. Please try again."
         );

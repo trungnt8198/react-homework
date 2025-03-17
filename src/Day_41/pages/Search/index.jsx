@@ -32,7 +32,10 @@ const Search = () => {
       .finally(() => setLoading(false));
   }, [query, currentPage, perPage]);
 
-  const debounceSearch = debounce((value) => setQuery(value), 500);
+  const debounceSearch = debounce((value) => {
+    setQuery(value);
+    setCurrentPage(1);
+  }, 500);
 
   return (
     <div className="page-container">
